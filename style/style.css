@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --backdark: #091921;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--backdark);
+    margin-top: 3em;
+}
+
+body.light{
+    background-color: white;
+}
+
+.tabcontent{
+    display: none;
+}
+
+.tabcontent.active{
+    display: flex;
+}
+
+.option--nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 8em;
+    margin-bottom: 2em;
+}
+
+.option--nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 3em;
+}
+
+.option--nav ul li a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 0.5em;
+    background-color: white;
+    color: var(--backdark);
+    box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+    inset 0 -15px 15px rgba(255,255,255,0.05),
+    0 -15px 15px rgba(0,0,0,0.3),
+    inset 0 -15px 15px rgba(0,0,0,0.3);
+}
+.option--nav ul li i{
+    font-size: 5em;
+}
+
+.option--nav ul li a:hover,
+.option--nav ul li.active a
+{
+    background-color: var(--backdark);
+    color: white;
+    box-shadow: 0 -8px 8px rgba(255,255,255,0.05),
+    inset 0 8px 8px rgba(255,255,255,0.05),
+    0 -8px 8px rgba(0,0,0,0.3),
+    inset 0 -8px 8px rgba(0,0,0,0.3);
+    transition: 0.5s;
+}
+
+.option--nav.light ul li a{
+    background-color: var(--backdark);
+    color: white;
+    box-shadow: 0 -8px 8px rgba(255,255,255,0.05),
+    inset 0 8px 8px rgba(255,255,255,0.05),
+    0 -8px 8px rgba(0,0,0,0.3),
+    inset 0 -8px 8px rgba(0,0,0,0.3);
+}
+
+.option--nav.light ul li a:hover,
+.option--nav.light ul li.active a
+{
+    background-color: white;
+    color: var(--backdark);
+    box-shadow: 0 -8px 8px rgba(255,255,255,0.05),
+    inset 0 8px 8px rgba(255,255,255,0.05),
+    0 -8px 8px rgba(0,0,0,0.3),
+    inset 0 -8px 8px rgba(0,0,0,0.3);
+}
+
+.analog--clock{
+    width: 20em;
+    height: 20em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../assets/clock.png');
+    background-size: cover;
+    border: 4px solid;
+    border-color: var(--backdark);
+    border-radius: 50%;
+    box-shadow:     
+    0 -4px 4px rgba(255,255,255,0.05),
+    inset 0 2px 1px rgba(255,255,255,0.05),
+    0 4px 16px rgba(0,0,0,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.3);
+}
+
+.analog--clock:before{
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 99;
+}
+
+.analog--clock.light:before{
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: var(--backdark);
+}
+
+.analog--clock .hour, .analog--clock .min, .analog--clock .sec{
+    position: absolute;
+}
+
+.analog--clock .hour, .hr{
+    width: 160px;
+    height: 160px;
+
+}
+
+.analog--clock .min, .mn{
+    width: 190px;
+    height: 190px;   
+}
+
+.analog--clock .sec, .sc{
+    width: 230px;
+    height: 230px;   
+}
+
+.hr, .mn, .sc{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr:before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: #FF105E;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 
+    0 0 9px rgba(255,255,255,0.15),
+    0 0 15px rgba(255,255,255,0.15),
+    0 0 20px rgba(255,255,255,0.15);
+}
+
+.hr.light:before{
+    box-shadow: 
+    0 0 5px rgba(255,255,255,0.15),
+    0 0 10px rgba(255,255,255,0.15),
+    0 0 14px rgba(255,255,255,0.15);
+}
+
+.mn:before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: white;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 
+    0 0 9px rgba(255,255,255,0.15),
+    0 0 15px rgba(255,255,255,0.15),
+    0 0 20px rgba(255,255,255,0.15);
+}
+
+.mn.light:before{
+    background: var(--backdark);
+    box-shadow: 
+    0 0 9px rgba(255,255,255,0.15),
+    0 0 15px rgba(255,255,255,0.15),
+    0 0 20px rgba(255,255,255,0.15);
+}
+
+.sc:before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: white;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 
+    0 0 9px rgba(255,255,255,0.15),
+    0 0 15px rgba(255,255,255,0.15),
+    0 0 20px rgba(255,255,255,0.15);
+}
+
+.sc.light:before{
+    background: var(--backdark);
+    box-shadow: 
+    0 0 9px rgba(255,255,255,0.15),
+    0 0 15px rgba(255,255,255,0.15),
+    0 0 20px rgba(255,255,255,0.15);
+}
+
+.digital--clock{
+    margin: 2.5em 0;
+    width: 15em;
+    height: 15em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid;
+    border-color: var(--backdark);
+    box-shadow: 
+    0 -4px 4px rgba(255,255,255,0.05),
+    inset 0 2px 1px rgba(255,255,255,0.05),
+    0 4px 16px rgba(0,0,0,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.3);
+}
+
+.digital--clock.light{
+    border-color: white;
+    box-shadow: 
+    0 -4px 4px rgba(255,255,255,0.05),
+    inset 0 2px 1px rgba(255,255,255,0.05),
+    0 4px 16px rgba(0,0,0,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.3);
+}
+
+.display--clock{
+    font-size: 32px;
+    color: white;
+    text-shadow:
+    0 0 9px rgba(255,255,255,0.2),
+    0 0 15px rgba(255,255,255,0.2),
+    0 0 20px rgba(255,255,255,0.2);
+}
+
+.display--clock.light{
+    color: var(--backdark);
+    text-shadow:
+    0 0 9px rgba(9, 25, 33,0.2),
+    0 0 15px rgba(9, 25, 33, 0.2),
+    0 0 20px rgba(9, 25, 33, 0.2);
+}
+
+.checkbox--theme {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  width: 50px;
+  height: 26px;
+  margin: 3em 0;
+  background-color: white;
+  display: flex;
+  border-radius:50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+}
+
+.label.light {
+    background-color: var(--backdark);
+}
+
+.ball--checkbox {
+  width: 20px;
+  height: 20px;
+  background-color: var(--backdark);
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.ball--checkbox.light {
+    background-color: white;
+}
+
+.checkbox--theme:checked + .label .ball--checkbox{
+  transform: translateX(24px);
+}
+
+@media screen and (max-width: 320px){
+    .option--nav ul{
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        gap: 3em;
+    }
+
+    .option--nav ul{
+        gap: 2em;
+    }
+
+    .option--nav ul span{
+        font-size: 12px;
+    }
+    
+    .option--nav ul li a{
+        padding: 0.5em;
+    }
+    .option--nav ul li i{
+        font-size: 4em;
+    }
+
+    .analog--clock{
+        width: 15em;
+        height: 15em;
+        display: flex;
+        border: 2px solid;
+    }
+
+    .analog--clock .hour, .hr{
+        width: 80px;
+        height: 80px;
+    
+    }
+    
+    .analog--clock .min, .mn{
+        width: 120px;
+        height: 120px;   
+    }
+    
+    .analog--clock .sec, .sc{
+        width: 150px;
+        height: 150px;   
+    }
+
+    .hr:before{
+        width: 6px;
+        height: 40px;
+    }
+    
+    .mn:before{
+        width: 4px;
+        height: 60px;
+    }
+    
+    .sc:before{
+        width: 2px;
+        height: 80px;
+    }
+}
+
+@media screen and (min-width: 769px){
+    body{
+        flex-direction: row;
+        gap: 5em;
+        margin-top: 0;
+    }
+
+    .option--nav ul{
+        flex-direction: column;
+        gap: 2.5em;
+    }
+
+    .digital--clock{
+        width: 20em;
+        height: 10em;
+    }
+
+    .display--clock{
+        font-size: 42px;
+    }
+
+    .label {
+        width: 26px;
+        height: 50px;
+        margin: 0;
+    }
+
+    .ball--checkbox {
+        top: 2px;
+        left: 3px;
+    }
+
+    .checkbox--theme:checked + .label .ball--checkbox{
+        transform: translateY(24px);
+    }
+}

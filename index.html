@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <header>
+        <div class="option--nav">
+            <ul>
+                <li class="active" data-id="1">
+                    <a href="#analog">
+                        <i class='bx bx-shape-circle'></i>
+                        <span class="text--nav">Analog</span>
+                    </a>
+                </li>
+                <li data-id="2">
+                    <a href="#digital">
+                        <i class='bx bx-shape-square'></i>
+                        <span class="text--nav">Digital</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="analog--container tabcontent active" id="analog" data-content="1">
+            <div class="analog--clock">
+                <div class="hour">
+                    <div class="hr" id="hr"></div>
+                </div>
+                <div class="min">
+                    <div class="mn" id="mn"></div>
+                </div>
+                <div class="sec">
+                    <div class="sc" id="sc"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="digital--container tabcontent" id="digital" data-content="2">
+            <div class="digital--clock">
+                <div class="display--clock"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <input type="checkbox" class="checkbox--theme" id="checkbox--theme">
+            <label for="checkbox--theme" class="label">
+                <div class='ball--checkbox'>
+            </label>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./script/clock.js"></script>
+    <script src="./script/main.js"></script>
+</body>
+</html>
